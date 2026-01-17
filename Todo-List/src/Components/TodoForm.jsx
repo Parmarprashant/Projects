@@ -1,13 +1,17 @@
 import { useState } from 'react'
 import { v4 as uuid } from 'uuid'
+import { toast } from 'react-toastify'
 
 function TodoForm({ addTodo, Completted }) {
   const [title, setTitle] = useState("")
 
   function handleSubmit(e) {
     e.preventDefault()
+   
     if (title.trim().length === 0) {
-      alert("please give some Todo before Add")
+      toast.info("please fill input", {
+        autoClose: 2000,
+      })
       return
     }
     const newTodo = {

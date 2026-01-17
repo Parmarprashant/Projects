@@ -1,6 +1,7 @@
 import './App.css'
 import { useState } from 'react'
 import Todoform from './Components/TodoForm.jsx'
+import { ToastContainer } from "react-toastify"
 import Todos from './Components/Todos.jsx'
 
 function App() {
@@ -42,15 +43,20 @@ function App() {
   return true 
 })
   return (
+    <>
+    <ToastContainer/>
     <div className="app">
+     
       <h1 className="main">Todo-List</h1>
       <Todoform addTodo={addTodo} Completted={Completted} />
+      
       <Todos
         todos={filteredTodos}
         toggleDone={ToggleCompleted}
         removeTodo={removeTodo}
       />
     </div>
+    </>
   )
 }
 
