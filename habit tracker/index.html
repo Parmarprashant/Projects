@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+  <div class="app">
+  <aside class="sidebar">
+    <h2>Habits</h2>
+    <ul id="habitList"></ul>
+    <button id="addHabit">+ Add</button>
+  </aside>
+
+  <main class="main">
+    <header>
+      <h2 id="activeHabit">Select Habit</h2>
+      <div class="month-nav">
+        <button id="prevMonth">◀</button>
+        <span id="monthYear"></span>
+        <button id="nextMonth">▶</button>
+      </div>
+    </header>
+
+    <div id="calendar" class="calendar"></div>
+
+    <section class="streak">
+      <h3>Current Streak</h3>
+      <p id="streakCount">0 days</p>
+      <div id="badges"></div>
+    </section>
+
+    <div class="button-group">
+      <button id="exportData">📥 Export Data</button>
+      <input type="file" id="importData" hidden accept=".json" />
+      <!-- <button onclick="document.getElementById('importData').click()" style="cursor: pointer;">📤 Import Data</button> -->
+    </div>
+  </main>
+</div>
+
+<div class="modal" id="noteModal">
+  <div class="modal-content">
+    <h3>Add Note</h3>
+    <textarea id="noteText" placeholder="Write your note here..."></textarea>
+    <button id="saveNote">Save Note</button>
+  </div>
+</div>
+</div>
+</body>
+  <script src="index.js"></script>
+</body>
+</html>
