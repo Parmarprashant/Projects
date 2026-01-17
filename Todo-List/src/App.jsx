@@ -53,7 +53,7 @@ function App() {
       <Todos
         todos={filteredTodos}
         toggleDone={ToggleCompleted}
-        removeTodo={removeTodo}
+        removeTodo={removeTodo} 
       />
     </div>
     </>
