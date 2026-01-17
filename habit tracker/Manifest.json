@@ -1,0 +1,9 @@
+{
+    "name": "first extension example",
+    "description": "experiment purpose creation to learn it from scratch",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "action" :{
+        "default_popup" : "index.html"
+    }
+}
