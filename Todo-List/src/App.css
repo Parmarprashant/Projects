@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  animation: bgFloat 10s ease-in-out infinite alternate;
+}
+
+@keyframes bgFloat {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+}
+
+.app {
+  background: #ffffff;
+  width: 100%;
+  max-width: 650px;
+  padding: 70px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  animation: fadeSlide 0.8s ease forwards;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+  animation: popIn 0.7s ease;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+form input {
+  flex: 1;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+form input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  transform: scale(1.02);
+}
+
+form button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #667eea;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+form button:hover {
+  background: #5563d6;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.todo {
+  background: #f8f9ff;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  animation: todoEnter 0.4s ease;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+@keyframes todoEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.todo:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.todo-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-left input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #667eea;
+  transition: transform 0.2s;
+}
+
+.todo-left input:checked {
+  transform: scale(1.2);
+}
+
+.todo-center {
+  flex: 1;
+  margin: 0 14px;
+}
+
+.todo-center p {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.todo-right button {
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.todo-right button:hover {
+  background: #e6393c;
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+  animation: strike 0.3s ease;
+}
+
+@keyframes strike {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.dropdown {
+  list-style: none;
+  padding: 0;
+  width: 120px; 
+  margin-left: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.dropdown > li {
+  position: relative;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.dropdown li ul {
+  display: none;
+  list-style: none;
+  padding: 0; 
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%; 
+  border: 1px solid #ccc;
+  background-color: #fff;
+  z-index: 10;
+  box-sizing: border-box; 
+}
+
+.dropdown li ul li {
+  padding: 10px;
+  background-color: #fff;
+  color: black;
+  border-bottom: 1px solid #eee;
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+.dropdown li ul li:hover {
+  background-color: #f1f1f1;
+}
+
+
+.dropdown li:hover > ul {
+  display: block;
+}
